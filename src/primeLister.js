@@ -7,10 +7,7 @@ class PrimeLister extends React.Component {
             input: "",
             showPrime: false,
             last: "",
-            primes: [],
-            p: 2,
-            j: 1,
-            factors: 0
+            primes: []
         }
     }
     render(){
@@ -23,7 +20,7 @@ class PrimeLister extends React.Component {
                 <div>
                     {this.state.showPrime? <div>
                         <p>Input = {this.state.last}</p>
-                        <ul>
+                        <ul className="input">
                             {this.state.primes.map((prime,i) =>
                             <li key={i}>
                                 {prime}
@@ -43,43 +40,32 @@ class PrimeLister extends React.Component {
     list = () => {
         this.setState(state => ({
             showPrime: true,
-            last: state.input,
-            input:""
+            last: state.input
         }))
-        if (this.state.showPrime === true) {
-            this.setState(state => ({
-                p: 2,
-                primes: []
-            }))
-            while (this.state.p < parseInt(this.state.last)) {
-                this.setState(state => ({
-                    j: 1,
-                    factors: 0
-                }))
-                while (this.state.j < this.state.p) {
-                    if (this.state.p % this.state.j === 0) {
-                        this.setState(state => ({
-                            factors: state.factors + 1,
-                            j: state.j + 1
-                        }))
-                    } else {
-                        this.setState(state => ({
-                            j: state.j + 1
-                        }))
-                    }
-                }
-                if (this.state.factors === 1) {
-                    this.setState(state => ({
-                        primes: [...state.primes, state.p],
-                        p: state.p + 1
-                    }))
+        let n = this.state.input;
+        let p = 2;
+        let primechildren = [];
+        while (p < n) {
+            let j = 1;
+            let factors = 0;
+            while (j < p) {
+                if (p % j === 0) {
+                    factors++;
+                    j++;
                 } else {
-                    this.setState(state => ({
-                        p: state.p + 1
-                    }))
+                    j++;
                 }
             }
-        }
+            if (factors === 1) {
+                primechildren.push(p);
+                p++;
+            } else {
+                p++;
+            }
+            }
+        this.setState(state => ({
+            primes: primechildren
+        }))
     }
 }
 

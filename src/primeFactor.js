@@ -11,13 +11,13 @@ class Factor extends React.Component {
     }
     render(){
         return(
-            <div>
+            <div className="App">
                 <input onChange={this.handleChange} name="input" placeholder="n" value={this.input}></input>
                 <button onClick={this.factorMe}>Factor</button>
                 <p>Factors:</p>
                 <ul>
-                    {this.factors.map((factor,j) =>
-                    <li key={j}>
+                    {this.state.factors.map((factor,j) =>
+                    <li key={j} className="input">
                         {factor}
                     </li>
                     )}
@@ -32,13 +32,13 @@ class Factor extends React.Component {
     }
     factorMe = () => {
         this.setState({
-            n: parseInt(this.state.input),
+            n: this.state.input,
             factors: []
         })
         this.generateFactors();
     }
     generateFactors = () => {
-        let m = this.state.n;
+        let m = this.state.input;
         let i = 1;
         let factorlist = [];
         while (i <= m) {
@@ -48,9 +48,10 @@ class Factor extends React.Component {
             } else {
                 i++;
             }
+            console.log(factorlist);
         }
         this.setState(state => ({
-            factors: state.factors.concat(this.factorlist)
+            factors: factorlist
         }))
     }
 }
