@@ -2,3 +2,7 @@
   text-align: center;
   margin: 100px;
 }
+.input {
+  text-align: center;
+  list-style-position: inside;
+}
