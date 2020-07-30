@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Factor from './primeFactor';
 import PrimeLister from './primeLister';
+import PrimeFactorer from './bestPrimeFactor';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       </p>
       <br/>
         <Factor />
+        <PrimeFactorer />
         <PrimeLister />
     </div>
   );
