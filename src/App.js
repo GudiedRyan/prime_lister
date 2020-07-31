@@ -12,9 +12,10 @@ function App() {
       The <strong>Fundamental Theorem of Arithmetic</strong> states that every positive integer greater than 2 is either prime, or can be
       written as a unique product of primes.
       <br />
-      <p>Since primes are such interesting numbers, I have put two functions of this page that will allow you to play with primes.
-        The first function will take any positive integer greater than 1 and return all the primes less than that integer.
-        The second function will take any integer and give you the prime factorization of that integer.
+      <p>Since primes are such interesting numbers, I have put a few functions of this page that will allow you to play with primes.
+        The first function on this page takes any integer and returns the factors. The second function takes any integer and tells you
+        what unique combination of primes make that integer. The third function takes any integer and returns all primes that are less
+        than that integer.
       </p>
       <br />
       <p><strong>NOTE:</strong> While computing power has vastly increased in the past several years, large numbers are 
