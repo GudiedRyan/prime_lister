@@ -11,7 +11,11 @@ class Factor extends React.Component {
     }
     render(){
         return(
-            <div className="App">
+            <div>
+                <h4>Factors</h4>
+                <p>Let <em>n</em> be an integer. An integer <em>a</em> is a factor of <em>n</em> if there exists an integer <em>b</em> such
+                that <em>n</em> = <em>ab</em>. A proper factor of <em>n</em> is a factor that is neither 1 nor <em>n</em>.
+                </p>
                 <input onChange={this.handleChange} name="input" placeholder="n" value={this.input}></input>
                 <button onClick={this.factorMe}>Factor</button>
                 <p>Factors:</p>
